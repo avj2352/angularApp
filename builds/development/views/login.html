@@ -1,0 +1,18 @@
+<section class="login">
+	<!--novalidate - In order to run Angular's validation, we should turn off HTML 5 validation -->
+	<!-- ng-submit triggers when someone submits a form -->
+	<form name="myForm" novalidate ng-submit="login()">
+		<h1>Hi There!</h1>
+		<p>Log-in to access the awesomeness !</p>
+		<input type="email" name="email" placeholder="Email" ng-model="user.email" ng-required="true">
+		<p class="error validationerror" ng-show="myForm.email.$invalid && myForm.email.$touched">
+			Please enter a valid Email ID (Eg: myemail@gmail.com)
+		</p>
+		<input type="password" name="password" placeholder="Password" ng-model="user.password" ng-required="true">
+		<p class="error validationerror" ng-show="myForm.password.$invalid && myForm.password.$touched">
+			Password is Required </p>
+		<p>&nbsp;</p>
+		<button type="submit" class="btn">Login</button>
+		<p>or <a ng-href="#/register">Register</a></p>
+	</form>
+</section>
